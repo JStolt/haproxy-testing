@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  haproxy:
+    build: ./haproxy/.
+    environment:
+      LOGGLY_TOKEN: "${LOGGLY_TOKEN}"
+    ports:
+     - '80:80'
+    volumes:
+      - ./haproxy:/app
+      - ./haproxy/net:/usr/share/lua/common/net
+
+  nginx1:
+    build: ./nginx1/.
+
+  nginx2:
+    build: ./nginx2/.
+
+  nginx3:
+    build: ./nginx3/.
+
+volumes:
+  haproxy:
+  lualib:
