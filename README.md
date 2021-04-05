@@ -38,6 +38,7 @@ This will install the necessary Python dependencies.  You're now ready to start 
 | `number` | -n/--number | N/A | Integer signifying the number of requests to generate |
 | `test_batch` | -t/--test | N/A | Testing batch tag for Loggly searches |
 | `curl` | -c/--curl | True, False | Flag to print cURL statements instead of executing requests |
+
 `number` - The number of requests to generate.  The client, pixel, and campaign ids come from a predefined set of combinations, while everything else is largely generated at random.  **NOTE:** This was not meant to be a high-volume testing tool, merely to generate some realistic mock data, so the requests are not parallelized at all, meaning the request execution process is pretty slow.  I'd aim to keep batch sizes <=1000 if I were you. <br>
 
 `test_batch` - This allows for an additional field, `testBatch`to be appended to the url query that will be set to the command line argument passed in.  If "my-test-batch" were passed to this argument, that value could then be searched in Loggly to see all events associated with that batch of requests. <br>
