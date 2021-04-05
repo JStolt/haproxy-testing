@@ -11,15 +11,5 @@ services:
       - ./haproxy:/app
       - ./haproxy/net:/usr/share/lua/common/net
 
-  nginx1:
-    build: ./nginx1/.
-
-  nginx2:
-    build: ./nginx2/.
-
-  nginx3:
-    build: ./nginx3/.
-
 volumes:
   haproxy:
-  lualib:
