@@ -3,7 +3,9 @@ import argparse
 from faker import Faker
 import requests
 
-parser = argparse.ArgumentParser(description='Process some integers.')
+# Linux Box Time, 1000 Events: 1 minute 35 seconds
+
+parser = argparse.ArgumentParser(description='Process some events.')
 parser.add_argument('-n', '--number', type=int, required=True,
                     help='number of requests to generate')
 parser.add_argument('-t', '--test', type=str, required=False, default=None,
@@ -77,9 +79,9 @@ def main(args):
                 data=payload,
                 headers=headers,
                 params=querystring)
-            print(
-                "Registered event for: client:{}, pixel:{}, campaign:{}".format(
-                    client_id, pixel_id, campaign_id))
+            # print(
+            #     "Registered event for: client:{}, pixel:{}, campaign:{}".format(
+            #         client_id, pixel_id, campaign_id))
 
 
 if __name__ == "__main__":

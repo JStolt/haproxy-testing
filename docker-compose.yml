@@ -9,7 +9,6 @@ services:
      - '80:80'
     volumes:
       - ./haproxy:/app
-      - ./haproxy/net:/usr/share/lua/common/net
 
 volumes:
   haproxy:
