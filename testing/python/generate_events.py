@@ -18,7 +18,7 @@ args = parser.parse_args()
 
 def main(args):
     fake = Faker()
-    url = "http://localhost/"
+    url = "https://endpoint.pixel.eks.dev.605.nu"
     curl = True if args['curl'] == 'True' else False
     # Set up a few test clients/pixels/campaigns
     # These cannot be random, and need to maintain relation
@@ -67,7 +67,8 @@ def main(args):
         }
 
         if curl is True:
-            curl_stmt = "curl --request GET --url 'http://localhost/?{0} --header {1}'".format(
+            curl_stmt = "curl --request GET --url '{0}?{1} --header {2}'".format(
+                url,
                 ''.join([k+'='+str(v)+'&' for k, v in querystring.items()])[:-1] + "'",
                 ' --header '.join("'"+k+':'+v+"'" for k, v in headers.items())[:-1]
             )
